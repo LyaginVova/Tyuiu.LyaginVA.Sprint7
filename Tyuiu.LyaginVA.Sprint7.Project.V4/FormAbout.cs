@@ -16,5 +16,10 @@ namespace Tyuiu.LyaginVA.Sprint7.Project.V4
         {
             InitializeComponent();
         }
+
+        private void buttonClose_LVA_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
