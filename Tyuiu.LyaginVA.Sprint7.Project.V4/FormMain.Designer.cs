@@ -30,21 +30,22 @@ namespace Tyuiu.LyaginVA.Sprint7.Project.V4
         private void InitializeComponent()
         {
             this.menuStripData_LVA = new System.Windows.Forms.MenuStrip();
+            this.ToolStripAboutProgram_LVA = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMove_LVA = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem_LVA = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem_LVA = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem_LVA = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem_LVA = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem_LVA = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripAboutProgram_LVA = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripExit_LVA = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripExit_LVA = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewData_LVA = new System.Windows.Forms.DataGridView();
             this.groupBoxMoves_LVA = new System.Windows.Forms.GroupBox();
-            this.buttonOpen_LVA = new System.Windows.Forms.Button();
+            this.buttonOpenData_LVA = new System.Windows.Forms.Button();
             this.buttonInfo_LVA = new System.Windows.Forms.Button();
             this.buttonAddBook_LVA = new System.Windows.Forms.Button();
-            this.buttonDownload_LVA = new System.Windows.Forms.Button();
-            this.saveFileDialogTable_LVA = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialogTable_LVA = new System.Windows.Forms.OpenFileDialog();
+            this.buttonSaveData_LVA = new System.Windows.Forms.Button();
+            this.saveFileDialogData_LVA = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialogData_LVA = new System.Windows.Forms.OpenFileDialog();
+            this.CodeBook_LVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Book_LVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Year_LVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autor_LVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,9 +59,9 @@ namespace Tyuiu.LyaginVA.Sprint7.Project.V4
             // 
             this.menuStripData_LVA.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStripData_LVA.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMove_LVA,
             this.ToolStripAboutProgram_LVA,
-            this.exitToolStripExit_LVA});
+            this.ToolStripMove_LVA,
+            this.ToolStripExit_LVA});
             this.menuStripData_LVA.Location = new System.Drawing.Point(0, 0);
             this.menuStripData_LVA.Name = "menuStripData_LVA";
             this.menuStripData_LVA.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -68,12 +69,19 @@ namespace Tyuiu.LyaginVA.Sprint7.Project.V4
             this.menuStripData_LVA.TabIndex = 0;
             this.menuStripData_LVA.Text = "menuStrip_LVA";
             // 
+            // ToolStripAboutProgram_LVA
+            // 
+            this.ToolStripAboutProgram_LVA.Name = "ToolStripAboutProgram_LVA";
+            this.ToolStripAboutProgram_LVA.Size = new System.Drawing.Size(94, 20);
+            this.ToolStripAboutProgram_LVA.Text = "О программе";
+            this.ToolStripAboutProgram_LVA.Click += new System.EventHandler(this.ToolStripAboutProgram_LVA_Click);
+            // 
             // ToolStripMove_LVA
             // 
             this.ToolStripMove_LVA.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem_LVA,
-            this.saveToolStripMenuItem_LVA,
             this.addToolStripMenuItem_LVA,
+            this.saveToolStripMenuItem_LVA,
             this.infoToolStripMenuItem_LVA});
             this.ToolStripMove_LVA.Name = "ToolStripMove_LVA";
             this.ToolStripMove_LVA.Size = new System.Drawing.Size(70, 20);
@@ -82,38 +90,33 @@ namespace Tyuiu.LyaginVA.Sprint7.Project.V4
             // openToolStripMenuItem_LVA
             // 
             this.openToolStripMenuItem_LVA.Name = "openToolStripMenuItem_LVA";
-            this.openToolStripMenuItem_LVA.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem_LVA.Size = new System.Drawing.Size(133, 22);
             this.openToolStripMenuItem_LVA.Text = "Открыть";
-            // 
-            // saveToolStripMenuItem_LVA
-            // 
-            this.saveToolStripMenuItem_LVA.Name = "saveToolStripMenuItem_LVA";
-            this.saveToolStripMenuItem_LVA.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem_LVA.Text = "Сохранить";
             // 
             // addToolStripMenuItem_LVA
             // 
             this.addToolStripMenuItem_LVA.Name = "addToolStripMenuItem_LVA";
-            this.addToolStripMenuItem_LVA.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem_LVA.Size = new System.Drawing.Size(133, 22);
             this.addToolStripMenuItem_LVA.Text = "Добавить";
+            // 
+            // saveToolStripMenuItem_LVA
+            // 
+            this.saveToolStripMenuItem_LVA.Name = "saveToolStripMenuItem_LVA";
+            this.saveToolStripMenuItem_LVA.Size = new System.Drawing.Size(133, 22);
+            this.saveToolStripMenuItem_LVA.Text = "Сохранить";
             // 
             // infoToolStripMenuItem_LVA
             // 
             this.infoToolStripMenuItem_LVA.Name = "infoToolStripMenuItem_LVA";
-            this.infoToolStripMenuItem_LVA.Size = new System.Drawing.Size(180, 22);
+            this.infoToolStripMenuItem_LVA.Size = new System.Drawing.Size(133, 22);
             this.infoToolStripMenuItem_LVA.Text = "Инфо";
             // 
-            // ToolStripAboutProgram_LVA
+            // ToolStripExit_LVA
             // 
-            this.ToolStripAboutProgram_LVA.Name = "ToolStripAboutProgram_LVA";
-            this.ToolStripAboutProgram_LVA.Size = new System.Drawing.Size(94, 20);
-            this.ToolStripAboutProgram_LVA.Text = "О программе";
-            // 
-            // exitToolStripExit_LVA
-            // 
-            this.exitToolStripExit_LVA.Name = "exitToolStripExit_LVA";
-            this.exitToolStripExit_LVA.Size = new System.Drawing.Size(54, 20);
-            this.exitToolStripExit_LVA.Text = "Выход";
+            this.ToolStripExit_LVA.Name = "ToolStripExit_LVA";
+            this.ToolStripExit_LVA.Size = new System.Drawing.Size(54, 20);
+            this.ToolStripExit_LVA.Text = "Выход";
+            this.ToolStripExit_LVA.Click += new System.EventHandler(this.ToolStripExit_LVA_Click);
             // 
             // dataGridViewData_LVA
             // 
@@ -124,12 +127,13 @@ namespace Tyuiu.LyaginVA.Sprint7.Project.V4
             this.dataGridViewData_LVA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewData_LVA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewData_LVA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodeBook_LVA,
             this.Book_LVA,
             this.Year_LVA,
             this.Autor_LVA,
             this.Finished_LVA});
             this.dataGridViewData_LVA.Location = new System.Drawing.Point(315, 26);
-            this.dataGridViewData_LVA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewData_LVA.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewData_LVA.Name = "dataGridViewData_LVA";
             this.dataGridViewData_LVA.RowHeadersWidth = 51;
             this.dataGridViewData_LVA.RowTemplate.Height = 24;
@@ -138,39 +142,38 @@ namespace Tyuiu.LyaginVA.Sprint7.Project.V4
             // 
             // groupBoxMoves_LVA
             // 
-            this.groupBoxMoves_LVA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxMoves_LVA.BackColor = System.Drawing.SystemColors.Menu;
-            this.groupBoxMoves_LVA.Controls.Add(this.buttonOpen_LVA);
+            this.groupBoxMoves_LVA.Controls.Add(this.buttonOpenData_LVA);
             this.groupBoxMoves_LVA.Controls.Add(this.buttonInfo_LVA);
             this.groupBoxMoves_LVA.Controls.Add(this.buttonAddBook_LVA);
-            this.groupBoxMoves_LVA.Controls.Add(this.buttonDownload_LVA);
+            this.groupBoxMoves_LVA.Controls.Add(this.buttonSaveData_LVA);
             this.groupBoxMoves_LVA.Location = new System.Drawing.Point(9, 26);
-            this.groupBoxMoves_LVA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxMoves_LVA.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxMoves_LVA.Name = "groupBoxMoves_LVA";
-            this.groupBoxMoves_LVA.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxMoves_LVA.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxMoves_LVA.Size = new System.Drawing.Size(293, 271);
             this.groupBoxMoves_LVA.TabIndex = 2;
             this.groupBoxMoves_LVA.TabStop = false;
             this.groupBoxMoves_LVA.Text = "Панель действия";
             // 
-            // buttonOpen_LVA
+            // buttonOpenData_LVA
             // 
-            this.buttonOpen_LVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOpen_LVA.Location = new System.Drawing.Point(4, 12);
-            this.buttonOpen_LVA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonOpen_LVA.Name = "buttonOpen_LVA";
-            this.buttonOpen_LVA.Size = new System.Drawing.Size(283, 39);
-            this.buttonOpen_LVA.TabIndex = 0;
-            this.buttonOpen_LVA.Text = "Открыть базу данных";
-            this.buttonOpen_LVA.UseVisualStyleBackColor = true;
+            this.buttonOpenData_LVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOpenData_LVA.Location = new System.Drawing.Point(4, 12);
+            this.buttonOpenData_LVA.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonOpenData_LVA.Name = "buttonOpenData_LVA";
+            this.buttonOpenData_LVA.Size = new System.Drawing.Size(283, 39);
+            this.buttonOpenData_LVA.TabIndex = 0;
+            this.buttonOpenData_LVA.Text = "Открыть базу данных";
+            this.buttonOpenData_LVA.UseVisualStyleBackColor = true;
+            this.buttonOpenData_LVA.Click += new System.EventHandler(this.buttonOpenData_LVA_Click);
             // 
             // buttonInfo_LVA
             // 
             this.buttonInfo_LVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonInfo_LVA.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonInfo_LVA.Location = new System.Drawing.Point(4, 144);
-            this.buttonInfo_LVA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonInfo_LVA.Margin = new System.Windows.Forms.Padding(2);
             this.buttonInfo_LVA.Name = "buttonInfo_LVA";
             this.buttonInfo_LVA.Size = new System.Drawing.Size(283, 39);
             this.buttonInfo_LVA.TabIndex = 0;
@@ -182,33 +185,41 @@ namespace Tyuiu.LyaginVA.Sprint7.Project.V4
             // 
             this.buttonAddBook_LVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAddBook_LVA.Location = new System.Drawing.Point(4, 100);
-            this.buttonAddBook_LVA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonAddBook_LVA.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddBook_LVA.Name = "buttonAddBook_LVA";
             this.buttonAddBook_LVA.Size = new System.Drawing.Size(283, 39);
             this.buttonAddBook_LVA.TabIndex = 0;
             this.buttonAddBook_LVA.Text = "Добавить книгу";
             this.buttonAddBook_LVA.UseVisualStyleBackColor = true;
+            this.buttonAddBook_LVA.Click += new System.EventHandler(this.buttonAddBook_LVA_Click);
             // 
-            // buttonDownload_LVA
+            // buttonSaveData_LVA
             // 
-            this.buttonDownload_LVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDownload_LVA.Location = new System.Drawing.Point(4, 56);
-            this.buttonDownload_LVA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonDownload_LVA.Name = "buttonDownload_LVA";
-            this.buttonDownload_LVA.Size = new System.Drawing.Size(283, 39);
-            this.buttonDownload_LVA.TabIndex = 0;
-            this.buttonDownload_LVA.Text = "Сохранить базу данных";
-            this.buttonDownload_LVA.UseVisualStyleBackColor = true;
+            this.buttonSaveData_LVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSaveData_LVA.Location = new System.Drawing.Point(4, 56);
+            this.buttonSaveData_LVA.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSaveData_LVA.Name = "buttonSaveData_LVA";
+            this.buttonSaveData_LVA.Size = new System.Drawing.Size(283, 39);
+            this.buttonSaveData_LVA.TabIndex = 0;
+            this.buttonSaveData_LVA.Text = "Сохранить базу данных";
+            this.buttonSaveData_LVA.UseVisualStyleBackColor = true;
+            this.buttonSaveData_LVA.Click += new System.EventHandler(this.buttonSaveData_LVA_Click);
             // 
-            // openFileDialogTable_LVA
+            // openFileDialogData_LVA
             // 
-            this.openFileDialogTable_LVA.FileName = "openFileDialog1";
+            this.openFileDialogData_LVA.FileName = "openFileDialog1";
+            // 
+            // CodeBook_LVA
+            // 
+            this.CodeBook_LVA.HeaderText = "Код книги";
+            this.CodeBook_LVA.Name = "CodeBook_LVA";
             // 
             // Book_LVA
             // 
             this.Book_LVA.HeaderText = "Название";
             this.Book_LVA.MinimumWidth = 6;
             this.Book_LVA.Name = "Book_LVA";
+            this.Book_LVA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // Year_LVA
             // 
@@ -237,7 +248,7 @@ namespace Tyuiu.LyaginVA.Sprint7.Project.V4
             this.Controls.Add(this.dataGridViewData_LVA);
             this.Controls.Add(this.menuStripData_LVA);
             this.MainMenuStrip = this.menuStripData_LVA;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Библиотека";
@@ -255,19 +266,20 @@ namespace Tyuiu.LyaginVA.Sprint7.Project.V4
         private System.Windows.Forms.MenuStrip menuStripData_LVA;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMove_LVA;
         private System.Windows.Forms.ToolStripMenuItem ToolStripAboutProgram_LVA;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripExit_LVA;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripExit_LVA;
         private System.Windows.Forms.DataGridView dataGridViewData_LVA;
         private System.Windows.Forms.GroupBox groupBoxMoves_LVA;
-        private System.Windows.Forms.Button buttonOpen_LVA;
+        private System.Windows.Forms.Button buttonOpenData_LVA;
         private System.Windows.Forms.Button buttonInfo_LVA;
         private System.Windows.Forms.Button buttonAddBook_LVA;
-        private System.Windows.Forms.Button buttonDownload_LVA;
+        private System.Windows.Forms.Button buttonSaveData_LVA;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem_LVA;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem_LVA;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem_LVA;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem_LVA;
-        private System.Windows.Forms.SaveFileDialog saveFileDialogTable_LVA;
-        private System.Windows.Forms.OpenFileDialog openFileDialogTable_LVA;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogData_LVA;
+        private System.Windows.Forms.OpenFileDialog openFileDialogData_LVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodeBook_LVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Book_LVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Year_LVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Autor_LVA;
